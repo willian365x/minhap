@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    image: httpd:2.4 # Use the official Apache HTTP Server image
+    container_name: my-apache-app
+    ports:
+      - "80:80" # Map host port 80 to container port 80
+    volumes:
+      - ./public:/usr/local/apache2/htdocs/ # Mount your 'public' directory to Apache's document root
+    restart: always # Automatically restart the container if it stops
